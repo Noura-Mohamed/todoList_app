@@ -1,11 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/controller/task_state.dart';
 import 'package:todo_app/controller/tasks_cubit.dart';
-import 'package:todo_app/models/task_model.dart';
-import 'package:todo_app/widgets/appbar.dart';
 import 'package:todo_app/widgets/model_sheet.dart';
 
 class AllTasks extends StatelessWidget {

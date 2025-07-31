@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/controller/tasks_cubit.dart';
@@ -19,8 +20,8 @@ class _TimePickerFieldState extends State<TimePickerField> {
       initialTime: cubit.selectedTime ?? TimeOfDay.now(),
     );
     if (picked != null) {
-      cubit.updateTime(picked);
-      _controller.text = picked.format(context);
+      cubit.updateTime(picked); 
+      _controller.text = picked.format(context); 
     }
   }
 
@@ -37,7 +38,7 @@ class _TimePickerFieldState extends State<TimePickerField> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             'Time',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
@@ -49,12 +50,11 @@ class _TimePickerFieldState extends State<TimePickerField> {
               onTap: _pickTime,
               decoration: InputDecoration(
                 hintText: 'Choose time',
-                hintStyle: const TextStyle(color: Color(0xffB9A6A6)),
-                prefixIcon: const Icon(Icons.access_time),
+                hintStyle: TextStyle(color: Color(0xffB9A6A6)),
+                prefixIcon: Icon(Icons.access_time),
                 border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(10),
-                ),
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10)),
                 filled: true,
                 fillColor: Colors.white,
               ),

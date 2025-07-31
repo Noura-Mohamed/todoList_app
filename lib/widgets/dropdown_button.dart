@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/controller/tasks_cubit.dart';
@@ -30,7 +29,10 @@ class DropButton extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 8),
             child: DropdownButtonFormField<String>(
-              value: cubit.selectedCategory,
+              value: categories.contains(cubit.selectedCategory)
+                  ? cubit.selectedCategory
+                  : null,
+
               decoration: InputDecoration(
                 hintText: 'Select Category',
                 hintStyle: TextStyle(color: Color(0xffB9A6A6)),
@@ -42,14 +44,11 @@ class DropButton extends StatelessWidget {
                 ),
               ),
               items: categories.map((category) {
-                return DropdownMenuItem(
-                  value: category,
-                  child: Text(category),
-                );
+                return DropdownMenuItem(value: category, child: Text(category));
               }).toList(),
               onChanged: (value) {
                 if (value != null) {
-                  cubit.updateCategory(value); 
+                  cubit.updateCategory(value);
                 }
               },
             ),
