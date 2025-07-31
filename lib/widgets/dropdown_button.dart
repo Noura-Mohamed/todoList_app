@@ -32,7 +32,6 @@ class DropButton extends StatelessWidget {
               value: categories.contains(cubit.selectedCategory)
                   ? cubit.selectedCategory
                   : null,
-
               decoration: InputDecoration(
                 hintText: 'Select Category',
                 hintStyle: TextStyle(color: Color(0xffB9A6A6)),
