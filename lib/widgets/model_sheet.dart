@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_app/controller/tasks_cubit.dart';
 import 'package:todo_app/widgets/addtask_button.dart';
 import 'package:todo_app/widgets/dropdown_button.dart';
 import 'package:todo_app/widgets/textfeild_widget.dart';
@@ -14,6 +16,7 @@ class ModelSheet extends StatefulWidget {
 class _ModelSheetState extends State<ModelSheet> {
   @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: const EdgeInsets.only(top: 20, right: 16, left: 16),
       child: Container(
@@ -21,17 +24,13 @@ class _ModelSheetState extends State<ModelSheet> {
         child: Column(
           children: [
             TextFieldWidget(),
+
             DropButton(),
             TimePickerField(),
-            AddtaskButton()
+            AddtaskButton(),
           ],
         ),
       ),
     );
   }
 }
-
-
-
-
-

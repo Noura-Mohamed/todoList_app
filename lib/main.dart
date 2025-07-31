@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_app/controller/tasks_cubit.dart';
 import 'package:todo_app/views/home_view.dart';
-import 'package:todo_app/widgets/appbar.dart';
-import 'package:todo_app/widgets/category_card.dart';
 
 void main() {
   runApp(const TodoListApp());
@@ -12,10 +12,12 @@ class TodoListApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeView()
+    return BlocProvider(
+      create: (context) => TasksCubit(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomeView(), // أو AllTasks()
+      ),
     );
   }
 }
-

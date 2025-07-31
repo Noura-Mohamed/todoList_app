@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
 class CategoryCard extends StatelessWidget {
-  const CategoryCard({super.key, required this.title, required this.icon, required this.color});
+  const CategoryCard({
+    super.key,
+    required this.title,
+    required this.icon,
+    required this.color,
+    required this.counttask
+  });
 
   final String title;
   final Icon icon;
   final Color color;
-
+  final int counttask;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,12 +26,11 @@ class CategoryCard extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: ListTile(
           leading: icon,
-          title: Text(title,
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold
-          ),),
-          subtitle: Text('4 Tasks'),
+          title: Text(
+            title,
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text('$counttask tasks'),
           trailing: Icon(Icons.settings),
         ),
       ),
