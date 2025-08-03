@@ -5,21 +5,23 @@ import 'package:todo_app/controller/tasks_cubit.dart';
 import 'package:todo_app/widgets/model_sheet.dart';
 
 class AllTasks extends StatelessWidget {
-  const AllTasks({super.key});
+  const AllTasks({super.key, required this.color, required this.title});
+  final Color color;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'ToDo List',
+          title,
           style: TextStyle(
             color: Colors.white,
             fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Color(0xffD0BAD4),
+        backgroundColor: color,
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),

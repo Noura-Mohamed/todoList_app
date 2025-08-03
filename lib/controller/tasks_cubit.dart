@@ -12,6 +12,13 @@ class TasksCubit extends Cubit<TaskState> {
   String? selectedCategory;
   TimeOfDay? selectedTime;
 
+  void resetInputs() {
+    selectedCategory = null;
+    selectedTime = null;
+    newTask.clear();
+    emit(ResetInputs());
+  }
+
   void addTask() {
     if (newTask.text.isNotEmpty &&
         selectedCategory != null &&
@@ -23,7 +30,7 @@ class TasksCubit extends Cubit<TaskState> {
       );
       allTasks.add(task);
       emit(AddTaskState());
-      newTask.clear();
+      resetInputs();
     } else {
       emit(TaskErrorState('Error adding task'));
     }
@@ -37,9 +44,8 @@ class TasksCubit extends Cubit<TaskState> {
   }
 
   List<Task> getTasksByCategory(String category) {
-  return allTasks.where((task) => task.category == category).toList();
-}
-
+    return allTasks.where((task) => task.category == category).toList();
+  }
 
   void toggleStatus(int index) {
     allTasks[index].isDone = !allTasks[index].isDone;

@@ -7,7 +7,7 @@ class DropButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<TasksCubit>();
+    final cubit = context.watch<TasksCubit>();
 
     final List<String> categories = [
       'Planned',

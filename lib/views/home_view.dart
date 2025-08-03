@@ -25,7 +25,7 @@ class HomeView extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return AllTasks();
+                        return AllTasks(color: Color(0xff7ED49B),title:'All Tasks',);
                       },
                     ),
                   );
@@ -43,7 +43,7 @@ class HomeView extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return AllTasks();
+                        return AllTasks(color: Color(0xffBBD8DF),title: 'Planned',);
                       },
                     ),
                   );
@@ -61,7 +61,7 @@ class HomeView extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return AllTasks();
+                        return AllTasks(color: Color(0xffFABD9C),title: 'Personal',);
                       },
                     ),
                   );
@@ -79,7 +79,7 @@ class HomeView extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return AllTasks();
+                        return AllTasks(color: Color(0xffD9D9D9),title: 'Work',);
                       },
                     ),
                   );
@@ -97,7 +97,7 @@ class HomeView extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return AllTasks();
+                        return AllTasks(color: Color(0xff4A9BAE),title: 'Shopping',);
                       },
                     ),
                   );
@@ -115,7 +115,7 @@ class HomeView extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return AllTasks();
+                        return AllTasks(color:Color(0xff9C9494) ,title: 'Study',);
                       },
                     ),
                   );

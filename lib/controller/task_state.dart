@@ -23,3 +23,5 @@ class TaskStatusChangedState extends TaskState{}
 class TaskCategoryUpdated extends TaskState{}
 
 class TaskTimeUpdated extends TaskState{}
+
+class ResetInputs extends TaskState{}
